@@ -1,0 +1,7 @@
+ARG X=python:3.9
+FROM ${X}
+COPY . /marioom
+WORKDIR /marioom
+RUN pip install nltk
+RUN python -m nltk.downloader stopwords punkt
+CMD ["python","app.py"]
